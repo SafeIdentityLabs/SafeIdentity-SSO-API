@@ -12,8 +12,10 @@
 	int ret = -1;
 	SSO sso = new SSO("368B184727E89AB69FAF");
 // 	sso.setHostName("192.168.10.84");
-	sso.setHostName("192.168.60.144");
+	sso.setHostName("10.211.55.4");
 	sso.setPortNumber(7000);
+
+
 
 	//*************************************************************************
 	// Request 처리
@@ -121,6 +123,12 @@
 
 		boolean overwriteFlag;
 		SsoAuthInfo authInfo = new SsoAuthInfo();
+
+		System.out.println("1. authInfo: " + uid);
+		System.out.println("2. authInfo: " + pwd);
+		System.out.println("3. authInfo: " + overwrite);
+		System.out.println("4. authInfo: " + cip);
+		System.out.println("5. authInfo: " + secId);
 
 		// 		if (overwrite.equals("true") || overwrite.equals("TRUE")){
 		if (overwrite.equalsIgnoreCase("true")) {
@@ -290,6 +298,24 @@
 		
 		ret = sso.userSearch(uid);
 		resultMsg = String.valueOf(ret);
+	} else if(cmd.equals("add_device")) {
+		String fcmToken = request.getParameter("fcm_token");
+		String type = request.getParameter("type");
+
+		System.out.println("fcmToken: " + fcmToken);
+		System.out.println("type: " + type);
+
+		SsoAuthInfo ssoAuthInfo = sso.userView(token);
+		if(ssoAuthInfo != null) {
+			String userId = ssoAuthInfo.getUserId();
+			System.out.println("userId: " + userId);
+
+			sso.getDevice().addDevice(userId, fcmToken, type);
+
+		} else {
+			resultMsg = "FAILED";
+		}
+
 	}
 	//-------------------------------------------------------	
 	else {

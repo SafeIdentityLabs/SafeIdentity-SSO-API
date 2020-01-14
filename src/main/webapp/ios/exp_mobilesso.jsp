@@ -11,7 +11,7 @@
 	String tokenKey = "saftidentitymobile";
 	int ret = -1;
 	SSO sso = new SSO("368B184727E89AB69FAF");
-	sso.setHostName("127.0.0.1");
+	sso.setHostName("10.211.55.4");
 	sso.setPortNumber(7000);
 
 	//*************************************************************************
