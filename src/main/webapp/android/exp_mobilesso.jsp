@@ -12,7 +12,7 @@
 	int ret = -1;
 	SSO sso = new SSO("368B184727E89AB69FAF");
 // 	sso.setHostName("192.168.10.84");
-	sso.setHostName("10.211.55.4");
+	sso.setHostName("10.211.55.5");
 	sso.setPortNumber(7000);
 
 
@@ -305,13 +305,13 @@
 		System.out.println("fcmToken: " + fcmToken);
 		System.out.println("type: " + type);
 
-		SsoAuthInfo ssoAuthInfo = sso.userView(token);
+
+
+
 		if(ssoAuthInfo != null) {
 			String userId = ssoAuthInfo.getUserId();
 			System.out.println("userId: " + userId);
-
 			sso.getDevice().addDevice(userId, fcmToken, type);
-
 		} else {
 			resultMsg = "FAILED";
 		}
