@@ -1,4 +1,23 @@
-# SecureOn-SSO-API
+# Overview
+
+모바일 SSO를 연동하기 위해서 아래와 같이 3개의 프로젝트가 제공 됩니다.
+
+
+
+[SafeIdentity-SSO-API](https://github.com/SafeIdentityLabs/SafeIdentity-SSO-API)
+
+모바일에서 SSO 인증하기 위한 API를 제공합니다. 먼저 서버에 설치가 되어 있어야 다음 단계를 진행 할수 있습니다.
+
+[SafeIdentity-SSO-Android-Sample](https://github.com/SafeIdentityLabs/SafeIdentity-SSO-Android-Sample)
+
+안드로이드 샘플 코드를 제공합니다.
+
+[SafeIdentity-SSO-iOS-Sample](https://github.com/SafeIdentityLabs/SafeIdentity-SSO-iOS-Sample)
+
+아이폰 샘플 코드를 제공합니다.
+
+
+# SafeIdentity-SSO-API
 
 모바일앱에서 호출하여 사용되는 웹페이지를 구성한 웹프로젝트이다.
 
