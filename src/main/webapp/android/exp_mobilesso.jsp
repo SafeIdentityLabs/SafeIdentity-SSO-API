@@ -302,12 +302,6 @@
 		String fcmToken = request.getParameter("fcm_token");
 		String type = request.getParameter("type");
 
-		System.out.println("fcmToken: " + fcmToken);
-		System.out.println("type: " + type);
-
-
-
-
 		if(ssoAuthInfo != null) {
 			String userId = ssoAuthInfo.getUserId();
 			System.out.println("userId: " + userId);
