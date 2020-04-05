@@ -12,7 +12,7 @@
 	int ret = -1;
 	SSO sso = new SSO("368B184727E89AB69FAF");
 // 	sso.setHostName("192.168.10.84");
-	sso.setHostName("10.211.55.5");
+	sso.setHostName("10.211.55.4");
 	sso.setPortNumber(7000);
 
 
@@ -156,7 +156,8 @@
 // 		String putValue = request.getParameter("version");
 		String uid = request.getParameter("uid");
 		String cip = request.getParameter("cip");
-
+		System.out.println("1. make_simple_token: " + uid);
+		System.out.println("2. make_simple_token: " + cip);
 // 		System.out.println(putValue);
 // 		SsoParser putValueNvds = new SsoParser(putValue);
 // 		String dcd = putValueNvds.search("DeptCD");
@@ -302,6 +303,7 @@
 		String fcmToken = request.getParameter("fcm_token");
 		String type = request.getParameter("type");
 
+		SsoAuthInfo ssoAuthInfo = new SsoAuthInfo();
 		if(ssoAuthInfo != null) {
 			String userId = ssoAuthInfo.getUserId();
 			System.out.println("userId: " + userId);
